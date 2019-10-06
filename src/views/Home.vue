@@ -1,6 +1,12 @@
 <template>
   <div class="home">
-    <Respondent></Respondent>
+    <div class="home__container">
+      <Respondent></Respondent>
+      <Respondent></Respondent>
+      <Respondent></Respondent>
+      <Respondent></Respondent>
+      <Respondent></Respondent>
+    </div>
   </div>
 </template>
 
@@ -19,5 +25,13 @@ export default class Home extends Vue {}
 
 <style lang="sass" scoped>
 div.home
-  height: 100vh
+
+  &__container
+    min-height: 100vh
+    height: 100vh
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+    align-content: space-around
 </style>
