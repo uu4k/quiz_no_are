@@ -2,21 +2,33 @@
   <div class="respondent">
     <div class="respondent__inner">
       <div class="respondent__inner__avator">
-        <img src="@/assets/avators/animal_neko.png" alt="avator" />
+        <img :src="avator_image" alt="avator" />
       </div>
       <div class="respondent__inner__table">
-        <div class="respondent__inner__table__name">yamada太郎</div>
-        <div class="respondent__inner__table__panel">200000</div>
+        <div class="respondent__inner__table__name">{{ name }}</div>
+        <div class="respondent__inner__table__panel">{{ point }}</div>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
-@Component
-export default class Respondent extends Vue {}
+@Component({
+  computed: {
+    avator_image: {
+      get(): String {
+        return require("@/assets/avators/" + this.$props.avator + ".png");
+      }
+    }
+  }
+})
+export default class Respondent extends Vue {
+  @Prop({ required: true }) name!: String;
+  @Prop({ required: true }) avator!: String;
+  @Prop({ required: true }) point!: Number;
+}
 </script>
 
 <style lang="sass" scoped>
