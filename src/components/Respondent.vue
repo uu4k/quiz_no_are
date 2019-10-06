@@ -51,7 +51,7 @@ export default class Respondent extends Vue {
       background-color: gold
       padding: 5%
       text-align: center
-  
+
       &__name
         background-color: white
         overflow: hidden
@@ -66,5 +66,4 @@ export default class Respondent extends Vue {
         text-overflow: ellipsis
         font-size: 4vw
         white-space: nowrap
-
 </style>

@@ -1,11 +1,11 @@
 <template>
   <div class="home">
     <div class="home__container">
-      <Respondent name="yamada太郎" point="100" avator="animal_neko"></Respondent>
-      <Respondent name="山田hanako" point="300" avator="animal_buta"></Respondent>
-      <Respondent name="スズキ太郎" point="1000" avator="animal_kuma"></Respondent>
-      <Respondent name="大空saburo" point="600" avator="animal_panda"></Respondent>
-      <Respondent name="大空ichiro" point="800" avator="animal_inu"></Respondent>
+      <Respondent name="yamada太郎" point="100" avator="animal_neko" />
+      <Respondent name="山田hanako" point="300" avator="animal_buta" />
+      <Respondent name="スズキ太郎" point="1000" avator="animal_kuma" />
+      <Respondent name="大空saburo" point="600" avator="animal_panda" />
+      <Respondent name="大空ichiro" point="800" avator="animal_inu" />
     </div>
   </div>
 </template>
