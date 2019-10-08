@@ -6,7 +6,7 @@
         :key="r.id"
         :name="r.name"
         :point="r.point"
-        :avator="r.avator"
+        :avatar="r.avatar"
       />
     </div>
   </div>
@@ -51,7 +51,7 @@ export default class Presentation extends Vue {
         this.respondents = this.respondents.modify(respondent);
       },
       (respondent: RespondentEntity) => {
-        this.respondents = respondents.remove(respondent);
+        this.respondents = this.respondents.remove(respondent);
       }
     );
   }

@@ -1,8 +1,8 @@
 <template>
   <div class="respondent">
     <div class="respondent__inner">
-      <div class="respondent__inner__avator">
-        <img :src="avator_image" alt="avator" />
+      <div class="respondent__inner__avatar">
+        <img :src="avatar_image" alt="avatar" />
       </div>
       <div class="respondent__inner__table">
         <div class="respondent__inner__table__name">{{ name }}</div>
@@ -17,16 +17,16 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component({
   computed: {
-    avator_image: {
+    avatar_image: {
       get(): String {
-        return require("@/assets/avators/" + this.$props.avator + ".png");
+        return require("@/assets/avatars/" + this.$props.avatar + ".png");
       }
     }
   }
 })
 export default class Respondent extends Vue {
   @Prop({ required: true }) name!: String;
-  @Prop({ required: true }) avator!: String;
+  @Prop({ required: true }) avatar!: String;
   @Prop({ required: true }) point!: Number;
 }
 </script>
@@ -40,7 +40,7 @@ export default class Respondent extends Vue {
   background: #EEE
 
   &__inner
-    &__avator
+    &__avatar
       text-align: center
 
       img

@@ -67,7 +67,7 @@ export default class RoomsRepositoy {
       const createdAt = data.created_at
         ? new Date(data.created_at.seconds * 1000)
         : new Date();
-      return new RespondentEntity(doc.id, data.name, data.point, data.avator);
+      return new RespondentEntity(doc.id, data.name, data.point, data.avatar);
     } else {
       throw "回答者が存在しません";
     }
@@ -79,7 +79,7 @@ export class RespondentEntity {
     readonly id: string,
     readonly name: string,
     readonly point: number,
-    readonly avator: string
+    readonly avatar: string
   ) {}
 }
 
