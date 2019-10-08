@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Room from "./views/Room.vue";
+import Presentation from "./views/Presentation.vue";
 
 Vue.use(Router);
 
@@ -22,7 +23,7 @@ export default new Router({
     {
       path: "/rooms/:roomId/presentation",
       name: "presentation",
-      component: Room // TODO
+      component: Presentation
     },
     {
       path: "/rooms/:roomId/manage",
