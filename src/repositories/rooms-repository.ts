@@ -46,7 +46,7 @@ export default class RoomsRepositoy {
   public addRespondent(
     roomId: string,
     name: string,
-    avatar: string
+    avatar?: string
   ): Promise<void> {
     avatar =
       avatar || this.AVATARS[Math.floor(Math.random() * this.AVATARS.length)];
@@ -91,6 +91,25 @@ export default class RoomsRepositoy {
       .catch(error => {
         console.log(error);
         throw "回答者のポイントの更新に失敗しました";
+      });
+  }
+
+  public removeRespondent(
+    roomId: string,
+    respondentId: string
+  ): Promise<void> {
+    return this.db
+      .collection("rooms")
+      .doc(roomId)
+      .collection("respondents")
+      .doc(respondentId)
+      .delete()
+      .then(() => {
+        return;
+      })
+      .catch(error => {
+        console.log(error);
+        throw "回答者のポイントの削除に失敗しました";
       });
   }
 

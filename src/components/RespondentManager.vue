@@ -30,7 +30,9 @@ export default class RespondentManager extends Vue {
       point
     );
   }
-  private removeResopndent() {}
+  private removeResopndent() {
+    roomsRepository.removeRespondent(this.$route.params.roomId, this.id);
+  }
 }
 </script>
 

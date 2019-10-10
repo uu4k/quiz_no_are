@@ -1,8 +1,13 @@
 <template>
   <div class="manage">
     <div class="manage__container">
-      <RespondentManager v-for="r in respondents.asList()" :key="r.id" :id="r.id" :name="r.name" :point="r.point">
-      </RespondentManager>
+      <RespondentManager
+        v-for="r in respondents.asList()"
+        :key="r.id"
+        :id="r.id"
+        :name="r.name"
+        :point="r.point"
+      ></RespondentManager>
       <b-form-input v-model="name" placeholder="回答者名を入力してください"></b-form-input>
       <b-button variant="success" @click="createRespondent">回答者追加</b-button>
     </div>
@@ -30,7 +35,12 @@ export default class Manage extends Vue {
   public respondents: RespondentEntityCollection = new RespondentEntityCollection();
   public name: string = "";
 
-  private createRespondent() {}
+  private createRespondent() {
+    if (this.name) {
+      roomsRepository.addRespondent(this.$route.params.roomId, this.name);
+      this.name = ""
+    }
+  }
 
   public async beforeRouteEnter(to: any, from: any, next: any) {
     if (to.params.roomId && roomsRepository.existsRoom(to.params.roomId)) {
