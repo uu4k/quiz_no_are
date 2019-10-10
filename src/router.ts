@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Room from "./views/Room.vue";
 import Presentation from "./views/Presentation.vue";
+import Manage from "./views/Manage.vue";
 
 Vue.use(Router);
 
@@ -28,7 +29,7 @@ export default new Router({
     {
       path: "/rooms/:roomId/manage",
       name: "manage",
-      component: Room // TODO
+      component: Manage
     },
     {
       path: "/",
